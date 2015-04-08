@@ -38,14 +38,8 @@
         </button>
         <a class="navbar-brand" href="#"><span class="sr-only">Project name</span></a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse navbar-right">
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-        <!--<ul class="nav nav-pills">
-          <li><a href="index.html">Features</a></li>
-          <li><a href="about.html">How it Works</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li> Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+
+      <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
           Sign Up
         </button>
 
@@ -69,8 +63,11 @@
             </div>
           </div>
         </div>
-          <!--</li>
-        </ul>-->
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary',
+                                  'menu_id' => 'primary-menu',
+                                  'container' => false,
+                                  'menu_class'=>'nav nav-pills' ) ); ?>
       </div><!--/.navbar-collapse -->
     </div>
   </nav>

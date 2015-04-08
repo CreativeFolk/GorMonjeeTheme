@@ -1,9 +1,4 @@
 
-<h1>Common Inquiries</h1>
-
-<?php query_posts('cat=faq'); ?>
-
-<?php if (have_posts()) : ?>
 <div class="col-xs-12">
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <?php while (have_posts()) : ?>
@@ -24,7 +19,3 @@
     <?php endwhile; ?>
   </div>
 </div>
-
-<?php else : ?>
-  <?php get_template_part( 'content', 'none' ); ?>
-<?php endif; ?>

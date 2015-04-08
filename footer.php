@@ -35,19 +35,18 @@
   </div>
 </footer>
 
+<?php $template_directory = get_bloginfo('template_directory'); ?>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="<?php echo $template_directory; ?>/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-<script src="js/vendor/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="js/vendor/skrollr.js"></script>
+<script src="<?php echo $template_directory; ?>/js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $template_directory; ?>/js/vendor/skrollr.js"></script>
 <script type="text/javascript">
   var s = skrollr.init();
 </script>
 
-<script src="js/main.js"></script>
-
+<script src="<?php echo $template_directory; ?>/js/main.js"></script>
 
 <!-- TypeKit Initialization -->
 <script>
@@ -69,7 +68,6 @@
   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
   ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 </script>
-
 
 <?php wp_footer(); ?>
 </body>
