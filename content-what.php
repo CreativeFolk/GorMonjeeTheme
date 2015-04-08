@@ -1,4 +1,4 @@
-<?php $pageID = 1 ?>
+<?php $pageID = get_page_by_path('what-is-gormonjee') ?>
 
 <h1><?php echo get_the_title($pageID); ?></h1>
 

@@ -29,42 +29,23 @@ get_header(); ?>
   <section class="about-section inverted">
     <div class="container">
       <h1>The Team</h1>
-      <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="imgcontainer">
-          <img src="img/team-shot.jpg">
-        </div>
-        <figcaption>
-          <h4>Name</h4>
-          <p>Littly bitty blurb about the person that's not longer than a sentance.</p>
-        </figcaption>
-      </figure>
-      <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="imgcontainer">
-          <img src="img/team-shot.jpg">
-        </div>
-        <figcaption>
-          <h4>Name</h4>
-          <p>Littly bitty blurb about the person that's not longer than a sentance.</p>
-        </figcaption>
-      </figure>
-      <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="imgcontainer">
-          <img src="img/team-shot.jpg">
-        </div>
-        <figcaption>
-          <h4>Name</h4>
-          <p>Littly bitty blurb about the person that's not longer than a sentance.</p>
-        </figcaption>
-      </figure>
-      <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="imgcontainer">
-          <img src="img/team-shot.jpg">
-        </div>
-        <figcaption>
-          <h4>Name</h4>
-          <p>Littly bitty blurb about the person that's not longer than a sentance.</p>
-        </figcaption>
-      </figure>
+
+      <?php query_posts('cat=team'); ?>
+
+      <?php if ( have_posts() ) : ?>
+
+        <?php while ( have_posts() ) : the_post(); ?>
+
+          <?php get_template_part( 'content', 'team' ); ?>
+
+        <?php endwhile; ?>
+
+      <?php else : ?>
+
+        <?php get_template_part( 'content', 'none' ); ?>
+
+      <?php endif; ?>
+
     </div>
   </section>
 

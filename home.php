@@ -29,13 +29,13 @@ get_header(); ?>
 <div class="tab-content">
 
   <div class="tab-pane fade in active" id="personal" role="tabpanel">
-
+<?php $page_slug = 'personal' ?>
     <?php get_template_part('content','features'); ?>
 
   </div><!-- tab-pane -->
 
   <div class="tab-pane fade" id="professional" role="tabpanel">
-
+<?php $page_slug = 'professional' ?>
     <?php get_template_part('content','features'); ?>
 
   </div>
