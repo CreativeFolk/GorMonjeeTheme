@@ -1,3 +1,4 @@
+<?php /* Template Name: Blog */ ?>
 <?php
 /**
  * The template for displaying blog posts.
@@ -19,7 +20,7 @@ get_header(); ?>
   </div>
   <div class="clearfix"></div>
 
-  <?php query_posts('cat=blog')?>
+  <?php query_posts(array('category_name' => 'blog'))?>
   
   <?php if ( have_posts() ) : ?>
 
