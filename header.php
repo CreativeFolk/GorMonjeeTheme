@@ -36,7 +36,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><span class="sr-only">Project name</span></a>
+        <a class="navbar-brand" href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_directory'); ?>/img/gormonjee_g.svg" alt="Gormonjee Logo"><img src="<?php bloginfo('template_directory'); ?>/img/gormonjee_text.svg" alt="Gormonjee Inc" class="hidden-xs logotype"></a>
       </div>
 
       <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
