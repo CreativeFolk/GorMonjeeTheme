@@ -7,7 +7,7 @@
 
   <?php while (have_posts()) : the_post(); ?>
 
-    <blockquote class="mission-statement"><?php echo $post->post_content; ?></blockquote>
+    <blockquote class="mission-statement col-xs-12 col-sm-6"><?php echo $post->post_content; ?></blockquote>
 
   <?php endwhile; ?>
 
