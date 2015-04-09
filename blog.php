@@ -28,7 +28,7 @@ get_header(); ?>
   
     <section class="blog-post col-xs-12 col-md-6 col-lg-3">
       <a href="<?php the_permalink()?>">
-        <?php $image = get_field('image'); ?>
+        <?php get_field('image_blog'); ?>
         <h2><?php the_title(); ?></h2>
         <h6><?php the_author_meta('')?></h6>
         <p><?php the_content(); ?></p>
