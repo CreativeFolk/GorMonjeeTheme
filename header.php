@@ -36,16 +36,34 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_directory'); ?>/img/gormonjee_g.svg" alt="Gormonjee Logo"><img src="<?php bloginfo('template_directory'); ?>/img/gormonjee_text.svg" alt="Gormonjee Inc" class="hidden-xs logotype"></a>
+        <a class="navbar-brand" href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_directory'); ?>/img/gormonjee_g.svg" alt="Gormonjee Logo"><img src="<?php bloginfo('template_directory'); ?>/img/gormonjee_text.svg" alt="Gormonjee Inc" class="hidden-xs hidden-sm logotype"></a>
       </div>
 
-      <button type="button" class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">
-        Sign Up
-      </button>
+      <button type="button" class="btn btn-primary btn-lg pull-right hidden-xs" data-toggle="modal" data-target="#myModal">
+          Sign Up
+        </button>
 
-      <?php get_template_part('modal'); ?>
-        
-      <div id="navbar" class="navbar-collapse collapse navbar-right">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span width="100px"aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sign Up For Gormonjee Beta</h4>
+              </div>
+              <div class="modal-body">
+                Name <input></input>
+                Email <input></input><br>
+                <p><input type="checkbox" name="option" value="newsletter"></input> I'd like to recive Gormonjee newsletter.<br>
+                <input type="checkbox" name="option" value="beta" checked></input> I'd like to join the Gormonjee beta program.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Join</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-right">
         <?php wp_nav_menu( array( 'theme_location' => 'primary',
                                   'menu_id' => 'primary-menu',
                                   'container' => false,
