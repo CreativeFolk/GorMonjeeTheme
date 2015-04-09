@@ -7,7 +7,7 @@
 
   <?php while (have_posts()) : the_post(); ?>
 
-    <?php the_content(); ?>
+    <blockquote class="mission-statement"><?php echo $post->post_content; ?></blockquote>
 
   <?php endwhile; ?>
 
@@ -79,7 +79,7 @@
 
     <h1><?php the_field('heading_one', $pageID); ?></h1>
     <h2><?php the_field('heading_two', $pageID); ?></h2>
-    <button class="btn">
+    <button class="btn" data-toggle="modal" data-target="#myModal">
       Sign up for Gormonjee beta today!
     </button>
   </div>
@@ -143,7 +143,7 @@
 
     <h1><?php the_field('heading_one', $pageID); ?></h1>
     <h2><?php the_field('heading_two', $pageID); ?></h2>
-    <button class="btn">
+    <button class="btn" data-toggle="modal" data-target="#myModal">
       Sign up for Gormonjee beta today!
     </button>
   </div>
