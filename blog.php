@@ -13,9 +13,8 @@ get_header(); ?>
 <div class="container">
   <main id="main" class="site-main" role="main">
    <div class="search">
-     <a class="pull-right" href="#"><img src="<?php bloginfo('template_directory'); ?>/img/search.svg"></a>
      <span class="pull-right">
-      <input type="search" name="search" value-size="40">
+      <?php get_search_form(); ?>
     </span>
   </div>
   <div class="clearfix"></div>
@@ -24,16 +23,74 @@ get_header(); ?>
   
   <?php if ( have_posts() ) : ?>
 
-  <?php while ( have_posts() ) : the_post(); ?>
-  
-    <section class="blog-post col-xs-12 col-md-6 col-lg-3">
-      <a href="<?php the_permalink()?>">
-        <?php get_field('image_blog'); ?>
-        <h2><?php the_title(); ?></h2>
-        <h6><?php the_author_meta('')?></h6>
-        <p><?php the_content(); ?></p>
-      </a>
-    </section>
+  <?php 
+  //Set a counter up to count to 5 for every 5th post styling to be different
+    $post_num = 0;
+  //Establish the Wordpress Loop
+    while ( have_posts() ) : the_post(); 
+  //Incrememnt the counter each time the loop pushes a new post
+    $post_num++;
+  ?>
+
+    <?php if( $wp_query->current_post == 0 && !is_paged() ) : ?>
+
+      <section class="blog-post col-xs-12 col-md-6 col-lg-6">
+        <a href="<?php the_permalink()?>">
+          <?php $image_blog = get_field('image_blog');
+                $image_url = $image_blog['url']; ?>
+          <img src="<?php echo $image_url; ?>" >
+          <h2><?php the_title(); ?></h2>
+          <h6><?php the_author_meta('display_name')?></h6>
+          <p><?php the_excerpt(); ?></p>
+        </a>
+      </section>
+
+    <?php elseif ($post_num == 6 ) : ?>
+
+      <?php //Reset the counter to 0 after we hit 5 
+        $post_num = 0; ?>
+      <section class="blog-post col-xs-12 col-md-6 col-lg-6">
+        <a href="<?php the_permalink()?>">
+          <?php $image_blog = get_field('image_blog');
+                $image_url = $image_blog['url']; ?>
+          <img src="<?php echo $image_url; ?>" >
+          <h2><?php the_title(); ?></h2>
+          <h6><?php the_author_meta('display_name')?></h6>
+          <p><?php the_excerpt(); ?></p>
+        </a>
+      </section>
+
+      <div class="clearfix visible-lg"></div>
+
+    <?php elseif ($post_num == 3) : ?> 
+
+      <section class="blog-post col-xs-12 col-md-6 col-lg-3">
+        <a href="<?php the_permalink()?>">
+          <?php $image_blog = get_field('image_blog');
+                $image_url = $image_blog['url']; ?>
+          <img src="<?php echo $image_url; ?>" >
+          <h2><?php the_title(); ?></h2>
+          <h6><?php the_author_meta('display_name')?></h6>
+          <p><?php the_excerpt(); ?></p>
+        </a>
+      </section>
+
+      <div class="clearfix visible-lg"></div>
+
+    <?php else : ?>
+
+      <section class="blog-post col-xs-12 col-md-6 col-lg-3">
+        <a href="<?php the_permalink()?>">
+          <?php $image_blog = get_field('image_blog');
+                $image_url = $image_blog['url']; ?>
+          <img src="<?php echo $image_url; ?>" >
+          <h2><?php the_title(); ?></h2>
+          <h6><?php the_author_meta('display_name')?></h6>
+          <p><?php the_excerpt(); ?></p>
+        </a>
+      </section>
+    
+    <?php endif; ?>
 
   <?php endwhile; ?>
   <?php else : ?>
