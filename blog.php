@@ -13,9 +13,7 @@ get_header(); ?>
 <div class="container">
   <main id="main" class="site-main" role="main">
    <div class="search">
-     <span class="pull-right">
       <?php get_search_form(); ?>
-    </span>
   </div>
   <div class="clearfix"></div>
 
@@ -38,7 +36,9 @@ get_header(); ?>
         <a href="<?php the_permalink()?>">
           <?php $image_blog = get_field('image_blog');
                 $image_url = $image_blog['url']; ?>
-          <img src="<?php echo $image_url; ?>" >
+          <figure class="blog-images">
+            <img src="<?php echo $image_url; ?>" >
+          </figure>
           <h2><?php the_title(); ?></h2>
           <h6><?php the_author_meta('display_name')?></h6>
           <p><?php the_excerpt(); ?></p>
@@ -53,7 +53,9 @@ get_header(); ?>
         <a href="<?php the_permalink()?>">
           <?php $image_blog = get_field('image_blog');
                 $image_url = $image_blog['url']; ?>
-          <img src="<?php echo $image_url; ?>" >
+          <figure class="blog-images">
+            <img src="<?php echo $image_url; ?>" >
+          </figure>
           <h2><?php the_title(); ?></h2>
           <h6><?php the_author_meta('display_name')?></h6>
           <p><?php the_excerpt(); ?></p>
@@ -68,7 +70,9 @@ get_header(); ?>
         <a href="<?php the_permalink()?>">
           <?php $image_blog = get_field('image_blog');
                 $image_url = $image_blog['url']; ?>
-          <img src="<?php echo $image_url; ?>" >
+          <figure class="blog-images">
+            <img src="<?php echo $image_url; ?>" >
+          </figure>
           <h2><?php the_title(); ?></h2>
           <h6><?php the_author_meta('display_name')?></h6>
           <p><?php the_excerpt(); ?></p>
@@ -83,7 +87,9 @@ get_header(); ?>
         <a href="<?php the_permalink()?>">
           <?php $image_blog = get_field('image_blog');
                 $image_url = $image_blog['url']; ?>
-          <img src="<?php echo $image_url; ?>" >
+          <figure class="blog-images">
+            <img src="<?php echo $image_url; ?>" >
+          </figure>
           <h2><?php the_title(); ?></h2>
           <h6><?php the_author_meta('display_name')?></h6>
           <p><?php the_excerpt(); ?></p>
